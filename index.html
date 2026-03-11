@@ -113,6 +113,7 @@ alert("Conta criada! Agora faça login.");
 
 }
 </script>
+<div id="login">
 <h2>Login</h2>
 
 <input type="text" id="user" placeholder="Usuário">
@@ -122,20 +123,22 @@ alert("Conta criada! Agora faça login.");
 
 <button onclick="login()">Entrar</button>
 
+</div>
 <script>
 function login(){
 
 var user = document.getElementById("user").value;
 var pass = document.getElementById("pass").value;
+
 var userSalvo = localStorage.getItem("user");
 var passSalvo = localStorage.getItem("pass");
 
-if(user=="fino" && pass=="3060"){
+if(user == "fino" && pass == "3060"){
 
 alert("Bem-vindo administrador");
 
+document.getElementById("login").style.display="none";
 document.getElementById("painel-admin").style.display="block";
-document.getElementById("painel-cliente").style.display="none";
 
 }
 
@@ -143,15 +146,17 @@ else if(user == userSalvo && pass == passSalvo){
 
 alert("Bem-vindo cliente");
 
+document.getElementById("login").style.display="none";
 document.getElementById("painel-cliente").style.display="block";
-document.getElementById("painel-admin").style.display="none";
 
 }
+
 else{
 
 alert("Usuário ou senha errado");
 
 }
+
 }
 </script>
 <div class="box hidden" id="painel-admin">

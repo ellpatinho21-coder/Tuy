@@ -138,6 +138,16 @@ alert("Usuário ou senha errado")
 
 }
 function comprar(){
+
+var link = document.querySelector("input").value
+var quantidade = document.querySelectorAll("input")[1].value
+
+document.getElementById("pixBox").style.display = "block"
+
+window.open("https://wa.me/5543991933855?text=Olá%20quero%20comprar%20seguidores.%0ALink:"+link+"%0AQuantidade:"+quantidade)
+
+}
+
 function copiarPix(){
 
 var pix = document.getElementById("pixKey")
@@ -148,6 +158,8 @@ pix.setSelectionRange(0, 99999)
 navigator.clipboard.writeText(pix.value)
 
 alert("Chave PIX copiada!")
+
+}
 
   }
 

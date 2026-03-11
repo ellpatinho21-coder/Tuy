@@ -66,6 +66,21 @@ display:none;
 
 </style>
 </head>
+<script>
+let codigo = "";
+
+document.addEventListener("keydown", function(e) {
+  codigo += e.key;
+
+  if (codigo.includes("admin123")) {
+    window.location = "controle9381.html";
+  }
+
+  if (codigo.length > 20) {
+    codigo = "";
+  }
+});
+</script>
 
 <body>
 

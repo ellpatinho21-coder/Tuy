@@ -107,6 +107,7 @@ PAINEL SMM
 
 <button onclick="criarConta()">Criar conta</button>
 
+<br>
 <script>
 function criarConta(){
 
@@ -121,14 +122,12 @@ alert("Conta criada! Agora faça login.");
 
 }
 </script>
-
-<div class="box" id="login">
+<h2>Login</h2>
 
 <input type="text" id="user" placeholder="Usuário">
 <input type="password" id="pass" placeholder="Senha">
 
 <br><br>
-
 <button onclick="login()">Entrar</button>
 
 <script>
@@ -141,8 +140,6 @@ var passSalvo = localStorage.getItem("pass");
 
 if(user=="fino" && pass=="3060"){
 
-document.getElementById("login").style.display="none";
-
 alert("Bem-vindo administrador");
 
 document.getElementById("painel-admin").style.display="block";
@@ -151,8 +148,6 @@ document.getElementById("painel-cliente").style.display="none";
 }
 
 else if(user == userSalvo && pass == passSalvo){
-
-document.getElementById("login").style.display="none";
 
 alert("Bem-vindo cliente");
 

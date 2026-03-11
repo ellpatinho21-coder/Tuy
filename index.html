@@ -101,19 +101,58 @@ PAINEL SMM
 
 <div class="box" id="login">
 
-<h2>Login</h2>
-
 <input type="text" id="user" placeholder="Usuário">
-
 <input type="password" id="pass" placeholder="Senha">
 
-<br>
+<br><br>
 
 <button onclick="login()">Entrar</button>
 
+<script>
+function login(){
+
+var user = document.getElementById("user").value;
+var pass = document.getElementById("pass").value;
+
+if(user=="admin" && pass=="9999"){
+document.getElementById("login").style.display="none";
+
+alert("Bem-vindo administrador");
+
+document.getElementById("painel-admin").style.display="block";
+document.getElementById("painel-cliente").style.display="none";
+
+}
+
+else if(user=="cliente" && pass=="1234"){
+document.getElementById("login").style.display="none";
+
+alert("Bem-vindo cliente");
+
+document.getElementById("painel-cliente").style.display="block";
+document.getElementById("painel-admin").style.display="none";
+
+}
+
+else{
+
+alert("Usuário ou senha errado");
+
+}
+
+}
+</script>
+<div class="box hidden" id="painel-admin">
+
+<h2>Painel Administrador</h2>
+
+<p>Bem-vindo administrador</p>
+
+<p>Total de pedidos: <span id="contador">0</span></p>
+
 </div>
 
-<div class="box hidden" id="painel">
+<div class="box hidden" id="painel-cliente">
 
 <h2>Comprar Seguidores</h2>
 <h2>Pacotes de Seguidores</h2>

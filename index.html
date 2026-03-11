@@ -161,12 +161,16 @@ alert("Chave PIX copiada!")
 
 }
 
-var link = document.querySelector("input").value
-var quantidade = document.querySelectorAll("input")[1].value
+function copiarPix(){
 
-document.getElementById("pixBox").style.display = "block"
+var pix = document.getElementById("pixKey")
 
-window.open("https://wa.me/5543991933855?text=Olá%20quero%20comprar%20seguidores.%0ALink:%20"+link+"%0AQuantidade:%20"+quantidade)
+pix.select()
+pix.setSelectionRange(0, 99999)
+
+navigator.clipboard.writeText(pix.value)
+
+alert("Chave PIX copiada!")
 
 }
 </script>

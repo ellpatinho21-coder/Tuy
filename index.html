@@ -129,6 +129,16 @@ var user = document.getElementById("user").value;
 var pass = document.getElementById("pass").value;
 var userSalvo = localStorage.getItem("user");
 var passSalvo = localStorage.getItem("pass");
+if(user == userSalvo && pass == passSalvo){
+
+alert("Login realizado");
+
+}
+else{
+
+alert("Usuário ou senha errado");
+
+}
 
 if(user=="fino" && pass=="3060"){
 

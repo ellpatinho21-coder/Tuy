@@ -98,6 +98,28 @@ PAINEL SMM
 </header>
 
 <div class="container">
+<h2>Criar Conta</h2>
+
+<input type="text" id="novoUser" placeholder="Usuário">
+<input type="password" id="novaSenha" placeholder="Senha">
+
+<br><br>
+
+<button onclick="criarConta()">Criar conta</button>
+
+<script>
+function criarConta(){
+
+var user = document.getElementById("novoUser").value;
+var pass = document.getElementById("novaSenha").value;
+
+localStorage.setItem("user", user);
+localStorage.setItem("pass", pass);
+
+alert("Conta criada! Agora faça login.");
+
+}
+</script>
 
 <div class="box" id="login">
 
@@ -148,7 +170,7 @@ alert("Usuário ou senha errado");
 
 <p>Bem-vindo administrador</p>
 
-<p>Total de pedidos: <span id="contador">0</span></p>
+<span id="contadorAdmin">0</span>
 
 </div>
 
@@ -156,7 +178,7 @@ alert("Usuário ou senha errado");
 
 <h2>Comprar Seguidores</h2>
 <h2>Pacotes de Seguidores</h2>
-<h3>Pedidos feitos: <span id="contador">0</span></h3>
+<span id="contadorCliente">0</span>
 
 <button onclick="setPacote(500)">
 500 seguidores - $12
@@ -200,6 +222,28 @@ Comprar
 </div>
 
 </div>
+<h2>Criar Conta</h2>
+
+<input type="text" id="novoUser" placeholder="Usuário">
+<input type="password" id="novaSenha" placeholder="Senha">
+
+<br><br>
+
+<button onclick="criarConta()">Criar conta</button>
+
+<script>
+function criarConta(){
+
+var user = document.getElementById("novoUser").value;
+var pass = document.getElementById("novaSenha").value;
+
+localStorage.setItem("user", user);
+localStorage.setItem("pass", pass);
+
+alert("Conta criada!");
+
+}
+</script>
 
 <script>
 var pedidos = 0;
@@ -254,10 +298,37 @@ alert("Chave PIX copiada!")
 
 }
 
+</script>
+<script>
+
+var pacoteSelecionado = 0;
+
 function setPacote(qtd){
-document.getElementById("quantidade").value = qtd;
+pacoteSelecionado = qtd;
+alert("Pacote selecionado: " + qtd + " seguidores");
+}
+
+function comprar(){
+
+var link = document.getElementById("link").value;
+var quantidade = document.getElementById("quantidade").value;
+
+if(link == "" || quantidade == ""){
+alert("Preencha o link e a quantidade");
+return;
+}
+
+var contadorCliente = document.getElementById("contadorCliente");
+contadorCliente.innerText = parseInt(contadorCliente.innerText) + 1;
+
+var contadorAdmin = document.getElementById("contadorAdmin");
+contadorAdmin.innerText = parseInt(contadorAdmin.innerText) + 1;
+
+alert("Pedido enviado!");
+
 }
 
 </script>
+
 </body>
 </html>

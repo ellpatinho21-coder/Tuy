@@ -84,15 +84,6 @@ document.addEventListener("keydown", function(e) {
 
 <body>
 
-<script>
-var senha = prompt("Digite a senha para acessar")
-
-if(senha != "biz"){
-alert("Acesso negado")
-window.location = "https://google.com"
-}
-</script>
-
 <header>
 PAINEL SMM
 </header>
@@ -201,8 +192,8 @@ alert("Usuário ou senha errado");
 
 <br>
 
-<button onclick="comprar(); aumentarPedidos();">
-Comprar
+<button onclick="comprar(); aumentarPedidos();">Comprar</button>
+
 </button>
 <div id="pixBox" style="display:none; margin-top:20px; background:#111; padding:20px; border-radius:10px;">
 
@@ -250,10 +241,10 @@ document.getElementById("quantidade").value = qtd;
 
 function login(){
 
-var user = document.getElementById("user").value
-var pass = document.getElementById("pass").value
+var user = document.getElementById("user").value;
+var pass = document.getElementById("pass").value;
 
-if(user=="admin" && pass=="1234"){
+if(user=="fino" && pass=="3060"){
 
 document.getElementById("login").style.display="none"
 document.getElementById("painel").style.display="block"

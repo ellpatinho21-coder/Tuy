@@ -116,6 +116,7 @@ var pass = document.getElementById("novaSenha").value;
 localStorage.setItem("user", user);
 localStorage.setItem("pass", pass);
 
+
 alert("Conta criada! Agora faça login.");
 
 }
@@ -135,8 +136,11 @@ function login(){
 
 var user = document.getElementById("user").value;
 var pass = document.getElementById("pass").value;
+var userSalvo = localStorage.getItem("user");
+var passSalvo = localStorage.getItem("pass");
 
 if(user=="fino" && pass=="3606"){
+
 document.getElementById("login").style.display="none";
 
 alert("Bem-vindo administrador");
@@ -146,7 +150,8 @@ document.getElementById("painel-cliente").style.display="none";
 
 }
 
-else if(user=="cliente" && pass=="7172"){
+else if(user == userSalvo && pass == passSalvo){
+
 document.getElementById("login").style.display="none";
 
 alert("Bem-vindo cliente");
@@ -161,7 +166,6 @@ else{
 alert("Usuário ou senha errado");
 
 }
-
 }
 </script>
 <div class="box hidden" id="painel-admin">

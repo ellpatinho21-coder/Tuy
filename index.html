@@ -1,16 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Painel SMM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
 body{
 font-family: Arial;
 background:#020617;
 color:white;
-text-align:center;
 margin:0;
+text-align:center;
 }
 
 header{
 background:#0f172a;
 padding:20px;
-font-size:22px;
+font-size:24px;
 font-weight:bold;
 }
 
@@ -18,8 +26,17 @@ font-weight:bold;
 margin-top:40px;
 }
 
+.box{
+background:#0f172a;
+margin:auto;
+width:90%;
+max-width:400px;
+padding:25px;
+border-radius:10px;
+}
+
 input{
-width:80%;
+width:90%;
 padding:12px;
 margin:10px;
 border-radius:8px;
@@ -40,4 +57,75 @@ cursor:pointer;
 button:hover{
 background:#16a34a;
 }
+
+.hidden{
+display:none;
+}
+
 </style>
+</head>
+
+<body>
+
+<header>
+PAINEL SMM
+</header>
+
+<div class="container">
+
+<div class="box" id="login">
+
+<h2>Login</h2>
+
+<input type="text" id="user" placeholder="Usuário">
+
+<input type="password" id="pass" placeholder="Senha">
+
+<br>
+
+<button onclick="login()">Entrar</button>
+
+</div>
+
+<div class="box hidden" id="painel">
+
+<h2>Comprar Seguidores</h2>
+
+<input type="text" placeholder="Link do Instagram">
+
+<input type="number" placeholder="Quantidade de seguidores">
+
+<br>
+
+<button onclick="alert('Envie o pagamento no PIX e aguarde.')">
+Comprar
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function login(){
+
+var user = document.getElementById("user").value
+var pass = document.getElementById("pass").value
+
+if(user=="admin" && pass=="1234"){
+
+document.getElementById("login").style.display="none"
+document.getElementById("painel").style.display="block"
+
+}else{
+
+alert("Usuário ou senha errado")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

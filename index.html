@@ -159,7 +159,7 @@ alert("Usuário ou senha errado");
 
 }
 </script>
-<div class="box hidden" id="painel-admin">
+<div class="box" id="painel-admin" style="display:none;">
 
 <h2>Painel Administrador</h2>
 
@@ -169,7 +169,7 @@ alert("Usuário ou senha errado");
 
 </div>
 
-<div class="box hidden" id="painel-cliente">
+<div class="box" id="painel-cliente" style="display:none;">
 
 <h2>Comprar Seguidores</h2>
 <h2>Pacotes de Seguidores</h2>
@@ -197,8 +197,7 @@ alert("Usuário ou senha errado");
 
 <br>
 
-<button onclick="comprar(); aumentarPedidos();">Comprar</button>
-
+<button onclick="comprar()">Comprar</button>
 </button>
 <div id="pixBox" style="display:none; margin-top:20px; background:#111; padding:20px; border-radius:10px;">
 

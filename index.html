@@ -117,6 +117,7 @@ PAINEL SMM
 
 <h2>Comprar Seguidores</h2>
 <h2>Pacotes de Seguidores</h2>
+<h3>Pedidos feitos: <span id="contador">0</span></h3>
 
 <button onclick="setPacote(500)">
 500 seguidores - $12
@@ -140,8 +141,7 @@ PAINEL SMM
 
 <br>
 
-<button onclick="comprar()">
-Comprar
+<button onclick="comprar(); aumentarPedidos();">
 </button>
 <div id="pixBox" style="display:none; margin-top:20px; background:#111; padding:20px; border-radius:10px;">
 
@@ -162,6 +162,12 @@ Comprar
 </div>
 
 <script>
+var pedidos = 0;
+
+function aumentarPedidos(){
+pedidos++;
+document.getElementById("contador").innerText = pedidos;
+}
 
 function setPacote(qtd){
 document.getElementById("quantidade").value = qtd;

@@ -124,7 +124,16 @@ alert("Usuário ou senha errado")
 }
 
 }
+function comprar(){
 
+var link = document.querySelector("input").value
+var quantidade = document.querySelectorAll("input")[1].value
+
+alert("Pague no PIX: ellpatinho21@gmail.com")
+
+window.open("https://wa.me/5543991933855?text=Olá%20quero%20comprar%20seguidores.%0ALink:%20"+link+"%0AQuantidade:%20"+quantidade)
+
+}
 </script>
 
 </body>

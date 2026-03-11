@@ -121,7 +121,27 @@ alert("Conta criada! Agora faça login.");
 
 }
 </script>
+<h2>Criar Conta</h2>
 
+<input type="text" id="novoUser" placeholder="Novo usuário">
+<input type="password" id="novaSenha" placeholder="Nova senha">
+
+<br><br>
+
+<button onclick="criarConta()">Criar conta</button>
+<script>
+function criarConta(){
+
+var user = document.getElementById("novoUser").value;
+var pass = document.getElementById("novaSenha").value;
+
+localStorage.setItem("user", user);
+localStorage.setItem("pass", pass);
+
+alert("Conta criada! Agora faça login");
+
+}
+</script>
 <div class="box" id="login">
 
 <input type="text" id="user" placeholder="Usuário">

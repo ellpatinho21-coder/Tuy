@@ -132,35 +132,21 @@ alert("Conta criada! Agora faça login.");
 
 <script>
 function login(){
-
 var user = document.getElementById("user").value;
 var pass = document.getElementById("pass").value;
 
+var contas = JSON.parse(localStorage.getItem("contas")) || [];
+
+var loginOk = false;
+
+for(var i = 0; i < contas.length; i++){
+if(user == contas[i].usuario && pass == contas[i].senha){
+loginOk = true;
+}
+}
+
 if(user=="fino" && pass=="3606"){
 document.getElementById("login").style.display="none";
-
-alert("Bem-vindo administrador");
-
-document.getElementById("painel-admin").style.display="block";
-document.getElementById("painel-cliente").style.display="none";
-
-}
-
-else if(user=="cliente" && pass=="7172"){
-document.getElementById("login").style.display="none";
-
-alert("Bem-vindo cliente");
-
-document.getElementById("painel-cliente").style.display="block";
-document.getElementById("painel-admin").style.display="none";
-
-}
-
-else{
-
-alert("Usuário ou senha errado");
-
-}
 
 }
 </script>
@@ -299,36 +285,5 @@ alert("Chave PIX copiada!")
 }
 
 </script>
-<script>
-
-var pacoteSelecionado = 0;
-
-function setPacote(qtd){
-pacoteSelecionado = qtd;
-alert("Pacote selecionado: " + qtd + " seguidores");
-}
-
-function comprar(){
-
-var link = document.getElementById("link").value;
-var quantidade = document.getElementById("quantidade").value;
-
-if(link == "" || quantidade == ""){
-alert("Preencha o link e a quantidade");
-return;
-}
-
-var contadorCliente = document.getElementById("contadorCliente");
-contadorCliente.innerText = parseInt(contadorCliente.innerText) + 1;
-
-var contadorAdmin = document.getElementById("contadorAdmin");
-contadorAdmin.innerText = parseInt(contadorAdmin.innerText) + 1;
-
-alert("Pedido enviado!");
-
-}
-
-</script>
-
 </body>
 </html>

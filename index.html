@@ -239,10 +239,6 @@ pedidos++;
 document.getElementById("contador").innerText = pedidos;
 }
 
-function setPacote(qtd){
-document.getElementById("quantidade").value = qtd;
-}
-
 function login(){
 
 var user = document.getElementById("user").value;
@@ -250,7 +246,7 @@ var pass = document.getElementById("pass").value;
 
 if(user=="fino" && pass=="3060"){
 
-document.getElementById("login").style.display="none"
+document.getElementById("login").style.display="none";
 document.getElementById("painel").style.display="block"
 
 }else{
@@ -258,16 +254,6 @@ document.getElementById("painel").style.display="block"
 alert("Usuário ou senha errado")
 
 }
-
-}
-function comprar(){
-
-var link = document.getElementById("link").value
-var quantidade = document.getElementById("quantidade").value
-
-document.getElementById("pixBox").style.display = "block"
-
-window.open("https://wa.me/5543991933855?text=Olá%20quero%20comprar%20seguidores.%0ALink:"+link+"%0AQuantidade:"+quantidade)
 
 }
 

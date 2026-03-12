@@ -346,7 +346,42 @@ alert("Pedido enviado!");
 
 </script>
 
+<h2>Comprar Seguidores</h2>
 
-<button onclick="comprar()">Enviar Pedido</button>
+<input id="link" placeholder="Link do Instagram">
+<br><br>
+
+<input id="quantidade" placeholder="Quantidade">
+<br><br>
+
+<button onclick="enviarPedido()">Enviar Pedido</button>
+
+<script>
+function enviarPedido() {
+
+  const link = document.getElementById("link").value;
+  const quantidade = document.getElementById("quantidade").value;
+
+  fetch("https://SEU-BACKEND.com/order", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      link: link,
+      quantity: quantidade
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    alert("Pedido enviado!");
+  })
+  .catch(error => {
+    alert("Erro ao enviar pedido");
+  });
+
+}
+</script>
 </body>
 </html>

@@ -357,29 +357,33 @@ alert("Pedido enviado!");
 <button onclick="enviarPedido()">Enviar Pedido</button>
 
 <script>
-function enviarPedido() {
+function enviarPedido(){
 
-  const link = document.getElementById("link").value;
-  const quantidade = document.getElementById("quantidade").value;
+var link = document.getElementById("link").value.trim();
+var quantidade = document.getElementById("quantidade").value.trim();
 
-  fetch("https://SEU-BACKEND.com/order", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      link: link,
-      quantity: quantidade
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    alert("Pedido enviado!");
-  })
-  .catch(error => {
-    alert("Erro ao enviar pedido");
-  });
+if(link == "" || quantidade == ""){
+alert("Preencha o link e a quantidade");
+return;
+}
+
+fetch("https://patinho21.replit.app/order", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+link: link,
+quantity: quantidade
+})
+})
+.then(res => res.json())
+.then(data => {
+alert("Pedido enviado com sucesso!");
+})
+.catch(err => {
+alert("Erro ao enviar pedido");
+});
 
 }
 </script>

@@ -322,20 +322,34 @@ async function enviarPedido() {
   const link = document.getElementById("link").value;
   const quantidade = document.getElementById("quantidade").value;
 
-  const resposta = await fetch("https://node-server--ellpatinho21.replit.app/order", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-  link: link,
-  quantidade: quantidade
-})
-  });
+  if(link == "" || quantidade == ""){
+    alert("Preencha o link e a quantidade");
+    return;
+  }
 
-  const data = await resposta.json();
+  try {
 
-  alert("Pedido enviado!");
+    const resposta = await fetch("https://node-server--ellpatinho21.replit.app/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        link: link,
+        quantidade: quantidade
+      })
+    });
+
+    const data = await resposta.json();
+
+    alert("Pedido enviado com sucesso!");
+
+  } catch (erro) {
+
+    alert("Erro ao enviar pedido");
+
+  }
+
 }
 </script>
 </body>

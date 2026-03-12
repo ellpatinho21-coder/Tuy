@@ -1,7 +1,7 @@
 <?php
 
 $data = [
-'key' => 'SUA_API_KEY',
+'key' => '7b71761427d5bc56f4facf4971de3ec3',
 'action' => 'balance'
 ];
 

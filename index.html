@@ -237,7 +237,7 @@ alert("Usuário ou senha errado");
 
 <br><br>
 
-<button onclick="setPacote(20000)">
+<button onclick="setPacote(20000,329.99)">
 20000 seguidores - $329.99
 </button>
 
@@ -261,7 +261,7 @@ alert("Usuário ou senha errado");
 
 <br>
 
-<button onclick="comprar()">Comprar</button>
+<button onclick="enviarPedido()">Comprar</button>
 
 <div id="pixBox" style="display:none; margin-top:20px; background:#111; padding:20px; border-radius:10px;">
 
@@ -297,10 +297,8 @@ alert("Conta criada!");
 
 <script>
 function setPacote(valor, preco){
-
 document.getElementById("quantidade").value = valor;
 document.getElementById("valor").value = "$" + preco;
-
 }
 var pedidos = 0;
 
@@ -327,13 +325,6 @@ alert("Chave PIX copiada!")
 
 <h2>Comprar Seguidores</h2>
 
-<input id="link" placeholder="Link do Instagram">
-<br><br>
-
-<input id="quantidade" placeholder="Quantidade">
-<br><br>
-
-<button onclick="enviarPedido()">Enviar Pedido</button>
 
 <script>
 function enviarPedido(){

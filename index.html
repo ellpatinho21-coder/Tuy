@@ -317,34 +317,25 @@ alert("Chave PIX copiada!")
 
 
 <script>
-function enviarPedido(){
+async function enviarPedido() {
 
-var link = document.getElementById("link").value.trim();
-var quantidade = document.getElementById("quantidade").value.trim();
+  const link = document.getElementById("link").value;
+  const quantidade = document.getElementById("quantidade").value;
 
-if(link == "" || quantidade == ""){
-alert("Preencha o link e a quantidade");
-return;
-}
-
-fetch("https://patinho21.replit.app/order", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify({
-link: link,
-quantity: quantidade
+  const resposta = await fetch("https://node-server--ellpatinho21.replit.app/order", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+  link: link,
+  quantity: quantidade
 })
-})
-.then(res => res.json())
-.then(data => {
-alert("Pedido enviado com sucesso!");
-})
-.catch(err => {
-alert("Erro ao enviar pedido");
-});
+  });
 
+  const data = await resposta.json();
+
+  alert("Pedido enviado!");
 }
 </script>
 </body>

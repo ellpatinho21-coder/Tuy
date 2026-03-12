@@ -242,13 +242,27 @@ alert("Usuário ou senha errado");
 </button>
 
 <input type="text" id="link" placeholder="Link do Instagram">
+<br><br>
+
+
+
+<br><br>
+
+
+
+<br><br>
+
+
 
 <input type="number" id="quantidade" placeholder="Quantidade de seguidores">
+<br><br>
+
+<input type="text" id="valor" placeholder="Valor a pagar" readonly>
 
 <br>
 
 <button onclick="comprar()">Comprar</button>
-</button>
+
 <div id="pixBox" style="display:none; margin-top:20px; background:#111; padding:20px; border-radius:10px;">
 
 <h2>Pagamento via PIX</h2>
@@ -282,8 +296,11 @@ alert("Conta criada!");
 </script>
 
 <script>
-function setQuantidade(valor){
+function setPacote(valor, preco){
+
 document.getElementById("quantidade").value = valor;
+document.getElementById("valor").value = "$" + preco;
+
 }
 var pedidos = 0;
 
@@ -306,17 +323,6 @@ alert("Chave PIX copiada!")
 }
 
 </script>
-<script>
-
-var pacoteSelecionado = 0;
-
-function setPacote(qtd){
-pacoteSelecionado = qtd;
-
-document.getElementById("quantidade").value = qtd;
-
-alert("Pacote selecionado: " + qtd + " seguidores");
-}
 
 function comprar(){
 
@@ -339,15 +345,7 @@ alert("Pedido enviado!");
 }
 
 </script>
-<h2>Comprar Seguidores</h2>
 
-<input type="text" id="link" placeholder="Link do Instagram">
-
-<br><br>
-
-<input type="number" id="quantidade" placeholder="Quantidade">
-
-<br><br>
 
 <button onclick="comprar()">Enviar Pedido</button>
 </body>

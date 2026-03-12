@@ -313,8 +313,8 @@ alert("Pacote selecionado: " + qtd + " seguidores");
 
 function comprar(){
 
-var link = document.getElementById("link").value;
-var quantidade = document.getElementById("quantidade").value;
+var link = document.getElementById("link").value.trim();
+var quantidade = document.getElementById("quantidade").value.trim();
 
 if(link == "" || quantidade == ""){
 alert("Preencha o link e a quantidade");

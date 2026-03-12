@@ -324,27 +324,6 @@ alert("Chave PIX copiada!")
 
 </script>
 
-function comprar(){
-
-var link = document.getElementById("link").value.trim();
-var quantidade = document.getElementById("quantidade").value.trim();
-
-if(link == "" || quantidade == ""){
-alert("Preencha o link e a quantidade");
-return;
-}
-
-var contadorCliente = document.getElementById("contadorCliente");
-contadorCliente.innerText = parseInt(contadorCliente.innerText) + 1;
-
-var contadorAdmin = document.getElementById("contadorAdmin");
-contadorAdmin.innerText = parseInt(contadorAdmin.innerText) + 1;
-
-alert("Pedido enviado!");
-
-}
-
-</script>
 
 <h2>Comprar Seguidores</h2>
 

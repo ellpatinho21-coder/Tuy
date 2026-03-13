@@ -271,46 +271,42 @@ alert("Usuário ou senha errado");
 </div>
 
 
+<script>
+
 function criarConta(){
+  var user = document.getElementById("novoUser").value;
+  var pass = document.getElementById("novaSenha").value;
 
-var user = document.getElementById("novoUser").value;
-var pass = document.getElementById("novaSenha").value;
+  localStorage.setItem("user", user);
+  localStorage.setItem("pass", pass);
 
-localStorage.setItem("user", user);
-localStorage.setItem("pass", pass);
-
-alert("Conta criada!");
-
+  alert("Conta criada!");
 }
-  
+
 function setPacote(valor, preco){
   document.getElementById("quantidade").value = valor;
   document.getElementById("valor").value = "$" + preco;
 }
-  
+
 var pedidos = 0;
 
 function aumentarPedidos(){
-pedidos++;
-document.getElementById("contador").innerText = pedidos;
+  pedidos++;
+  document.getElementById("contador").innerText = pedidos;
 }
 
 function copiarPix(){
+  var pix = document.getElementById("pixKey");
 
-var pix = document.getElementById("pixKey")
+  pix.select();
+  pix.setSelectionRange(0,99999);
 
-pix.select()
-pix.setSelectionRange(0, 99999)
+  navigator.clipboard.writeText(pix.value);
 
-navigator.clipboard.writeText(pix.value)
-
-alert("Chave PIX copiada!")
-
+  alert("Chave PIX copiada!");
 }
 
-<h2>Comprar Seguidores</h2>
-
-async function enviarPedido() {
+async function enviarPedido(){
 
   const link = document.getElementById("link").value;
   const quantidade = document.getElementById("quantidade").value;
@@ -320,12 +316,12 @@ async function enviarPedido() {
     return;
   }
 
-  try {
+  try{
 
-    const resposta = await fetch("https://node-server--ellpatinho21.replit.app/order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
+    const resposta = await fetch("https://node-server--ellpatinho21.replit.app/order",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
       },
       body: JSON.stringify({
         link: link,
@@ -334,19 +330,21 @@ async function enviarPedido() {
     });
 
     const data = await resposta.json();
+
     document.getElementById("pixBox").style.display = "block";
-  
-  
 
-   alert("Pedido enviado com sucesso!");
+    aumentarPedidos();
 
-  } catch (erro) {
+    alert("Pedido enviado com sucesso!");
+
+  }catch(erro){
 
     alert("Erro ao enviar pedido");
 
   }
 
 }
+
 </script>
 </body>
 </html>

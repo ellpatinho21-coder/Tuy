@@ -270,7 +270,7 @@ alert("Usuário ou senha errado");
 
 </div>
 
-<script>
+
 function criarConta(){
 
 var user = document.getElementById("novoUser").value;
@@ -282,9 +282,7 @@ localStorage.setItem("pass", pass);
 alert("Conta criada!");
 
 }
-</script>
-
-<script>
+  
 function setPacote(valor, preco){
   document.getElementById("quantidade").value = valor;
   document.getElementById("valor").value = "$" + preco;
@@ -310,13 +308,8 @@ alert("Chave PIX copiada!")
 
 }
 
-</script>
-
-
 <h2>Comprar Seguidores</h2>
 
-
-<script>
 async function enviarPedido() {
 
   const link = document.getElementById("link").value;

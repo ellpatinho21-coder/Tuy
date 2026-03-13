@@ -341,8 +341,11 @@ async function enviarPedido() {
     });
 
     const data = await resposta.json();
+    document.getElementById("pixBox").style.display = "block";
+  
+  
 
-    alert("Pedido enviado com sucesso!");
+   alert("Pedido enviado com sucesso!");
 
   } catch (erro) {
 
